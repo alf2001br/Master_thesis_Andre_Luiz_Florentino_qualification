@@ -1,0 +1,123 @@
+\chapter{RELATED WORK}
+\label{chp:rel}
+
+% From 42 references in Zotero, 38 references selected for the related work.
+
+This chapter provides a comprehensive examination of the existing literature that establishes the relevant research pertaining to this study. The parameters utilized in this process are clearly defined and outlined in Appendix  \ref{appendix:systematic_review}.
+
+The field of research associated with the recognition of acoustic scenes and environmental sounds has gained significant attention over the last decade, and currently holds immense practical value across diverse domains. Initiatives like challenges on \gls{dcase}, an international competition that focuses on the development and evaluation of computational methods for the analysis of environmental sounds, aims to advance the state-of-the-art in acoustic scene classification and sound event detection serving as a platform for researchers and practitioners to benchmark their methods, share ideas, and contribute to the advancement of audio processing technologies \cite{Mesaros2019}. To portrait a few potential applications of this field of research: in urban planning, it may aid in traffic management and noise pollution control, optimizing city infrastructure, by combining inexpensive hardware components (such as Raspberry Pi devices) with deep learning algorithms for event identification, and custom planar antennas for communication between nodes within an ubiquitous sensor network framework \cite{VidaaVila2020}. \gls{esr} ensures safety in different settings by monitoring noise levels and triggering emergency alerts as proposed by \textcite{Sharma2021} by developing a generic emergency detection system based on environmental sound using multiple audio feature extraction techniques and a deep \gls{cnn} 2D for classification. The non-embedded model was evaluated using well established benchmark datasets, where emergency sound-related classes were combined into one category, making it a binary classification problem with outstanding accuracy results. The incorporation of \gls{esr} in smart homes can offer numerous advantages by enabling automation triggered by the identification of sounds that are commonly overlooked by the occupants of the house. These sounds may include tap water leakage, flush water leakage, television noise, shower running, radio playing, and many others which can lead to wastage of energy resources and potential accidents. By using microphone sensing units and machine learning classifiers, \textcite{Pandya2021} proposed a sophisticated framework to accurately identify and interpret environmental sounds, ultimately taking actions to mitigate wastage or warn the house residents. A very simple commercial example of this application is the Alexa Guard. Further more, \gls{esr} finds applications in assistive technologies for the visually impaired \cite{Huang2023}, wildlife monitoring for conservation \cite{Jeantet2023}, in healthcare, it may assists in patient monitoring \cite{Fukuyama2022} and elderly care \cite{Saraubon2018}, and in agriculture for pest detection \cite{Branding2023} and equipment monitoring \cite{Jeong2022}.  
+
+% The six citations above {Huang2023}, {Jeantet2023}, {Fukuyama2022}, {Saraubon2018}, {Branding2023} and  {Jeong2022} belong to the collection "quick citation" and were not included in the Obsidian repository.
+
+Considering the complexity of this field of research, a few authors have created a review on essential techniques associated with sound recognition, for example, \textcite{Alias2016} published an extensive article to review the most relevant audio feature extraction techniques for analyzing speech, music, and environmental sounds, while \textcite{Alli2022}, assessed the recent progress in research concerning the utilization of knowledge databases, small datasets, classification methods, classification metrics, audio features and data augmentation.
+
+In the context of research and academic endeavors, several authors have investigated different approaches to overcome the scarcity of publicly available dataset using machine learning techniques for evaluation  \cite{Salamon2014}, \cite{Bountourakis2015}, and \cite{Piczak2015}, while others utilized machine learning as baseline for comparison with more complex architecture such as \gls{lstm}-\gls{cnn} utilized by \textcite{Pandya2021} or the hybrid ensemble of machine learning classifiers proposed by \textcite{Bansal2022}. Achieving state-of-art classification metrics using small datasets is considered a typical problem, and a common method to overcome this situation involves data augmentation techniques. Unlike the ones well established for speech recognition such as warping the features, masking blocks of frequency channels, and masking blocks of time steps \cite{Park2019}, \gls{esr} requires a different approach given the audio characteristics in frequency and spectrum. Time stretching, pitch shifting, dynamic range compression and background noise addition was utilized by \textcite{Salamon2017} with log-mel-spectrogram as input for a \gls{cnn} 2D model. \textcite{Mushtaq2020} considered time stretching, pitch shifting, white noise addition and silence trimming in his deep \gls{cnn} 2D model using mel-spectrogram, \gls{mfcc} and Mel-spectrogram (feature aggregation), \textcite{Bountourakis2019} utilized only time stretching and pitch shifting but improved the features vector with additional statistical metrics to capture the temporal information of successive features, while \textcite{Chu2023} proposed, a different type of augmentation using mel filters to input \gls{mfcc}-spectrograms in the \gls{cnn} 2D model. Drawing inspiration from the approach employed in the field of visual recognition, several authors have explored the concept of feature aggregation to construct images from various spectrograms, for example, \textcite{Su2020} investigated the outcome of using different combinations of spectrograms from the audio features \gls{mfcc}, gammatone, log-mel, chroma, spectral contrast and tonnetz. \textcite{Luz2021} adopted a comparable strategy, but also added handcrafted features and compared the influence of feature selection in the process. Overall, the researches employment of diverse methods and approaches showcases a spectrum of creativity, ranging from light \gls{cnn} 2D model with \gls{mfcc}-spectrogram \cite{Shreyas2020}, \gls{cnn} 2D model utilizing multi-channel mel-spectrograms along with their deltas in both the time and frequency domains \cite{Tang2018}, deep learning models to separate music from environmental sound \cite{Rothmund2018}, stacked \gls{cnn} 2D models using either log-mel-spectrograms, raw data or ensemble of both \gls{cnn}s utilizing the Dempster-Shafer theory \cite{Li2018}, two-streams deep \gls{cnn} 2D model using chroma, spectral contrast, tonnetz aggregated with \gls{mfcc}-spectrogram in one stream and log-mel-spectrogram aggregated in the other \cite{Su2019}, two-streams deep \gls{cnn} 2D model using aggregated \gls{mfcc}-spectrogram and log-mel-spectrogram in one stream and raw data in the other \cite{Tran2020}, to highly complex architectures using self supervised learning as pretext to recognize the type of data augmentation that renders the best representative features as input for a deep \gls{cnn} 2D model \cite{Tripathi2021}.
+
+In the realm of embedded devices, researchers have also explored several applications for \gls{esr}. Notably, \textcite{Abreha2014}, in his master's thesis, delved into the intricacies of this field by developing an environmental audio–based context recognition system using smartphones and machine learning classifiers (\gls{k-nn}, \gls{svm}, and \gls{gmm}) with \gls{mfcc}, spectral centroid and spectral entropy as input. Expanding the scope of applications using microcontrollers, \textcite{Nordby2019} made significant contributions on city noise monitoring in his master’s thesis by conducting noise classification on a sensor node utilizing a low-cost microcontroller and embedded a \gls{cnn} 2D model that processed mel-spectrograms and delta-mel-spectrograms as input. Likewise, \textcite{VidaaVila2020}, proposed a highly scalable low-cost distributed infrastructure that features a ubiquitous acoustic sensor network to monitor real-time urban sounds performed on microcontrollers. While high-end general-purpose platforms, \gls{fpga}s and \gls{tpu}s have not been extensively investigated by researchers, a few authors have made significant contributions to this topic, starting with \textcite{Silva2019} that evaluated machine learning classifiers (\gls{gnb}, \gls{k-nn}, \gls{svm} and decision trees) and an \gls{ann} model using perceptual and physical features summarized across time using statistics (mean, median, minimum, maximum, variance, skewness and kurtosis), comparing the metrics obtained between a notebook and a Raspberry Pi 3. \textcite{Lhoest2021} followed the same approach, but proposed a method to improve these classical machine learning techniques by combining multiple classifiers and create, what was named, a “mosaic” of classifiers (MosAIc), a method based on the one-vs-all approach to reduce the number of recognizable classes to a binary problem. Finally, \textcite{Vandendriessche2021} developed a tool flow to evaluate a \gls{cnn} 1D model using perceptual and physical features deployed in different platforms, namely, Raspberry Pi 4 model B, USB Coral \gls{tpu}, Coral DevBoard, Zynq Z-7020 \gls{soc} and Zynq UltraScale+ XCZU7EV MP\gls{soc}. More recently, \textcite{Lamrini2023} proposed a method utilizing pre-trained models from \gls{yamnet}, achieving state-of-art results in terms of accuracy and inference time. Their approach leveraged the knowledge and capabilities captured by a pre-trained model that has been trained on large datasets, and applied to resource-constrained embedded devices (Raspberry Pi 4 model B and USB Coral \gls{tpu}), by freezing the last dense layer and replacing it with an \gls{ann} or \gls{cnn} 1D. 
+
+Finally, within the context of the automotive industry, there are already strong indications that stakeholders are interested in implementing sound recognition technology in cars, effectively giving them "ears". A good example is the EU-funded I-SPOT project which aims to enhance the environmental awareness of smart cars by incorporating acoustic sensing technology. The project focuses on efficient sensor placement, signal processing technologies, and smart, low-power hardware aiming to achieve industrial and economical ambitions, including the training of young scientists, strengthening Europe's position in the smart car electronics business, and transferring academic knowledge to the industry \cite{ISPOT2020}. Bosch is known in the automotive market as a cutting-edge supplier, and it comes as no surprise that they have been actively working on the development of a smart acoustic sensor specifically designed to detect sirens for autonomous vehicles. Their main objective is to enable cars to recognize the sound of sirens and respond appropriately, complying with legal requirements of many countries to give way to emergency vehicles. The sensor includes a microphone array and a microcontroller embedding artificial intelligence algorithms trained with more than 44.000 minutes of audio data. Once a siren is detected, the information is transmitted to the vehicle's onboard computer, allowing appropriate actions to be taken \cite{BOSCH2024}.
+
+The papers associated with this research field in the industry are limited. One notable paper by \textcite{Marchegiani2022} presented a novel approach in urban environments for identifying and locating horns and sirens of emergency vehicles. This approach utilized an external microphone array installed in the vehicle roof panel to overcome the limitations of conventional filtering techniques. Spectrograms were employed as images and image processing techniques were utilized to enhance noise detection and background-foreground separation. Additionally, the authors included acoustic event classification to differentiate alerting sounds and achieved accurate localization on the ground plane through the use of denoised signals. Although the study demonstrated exceptional performance in highly challenging scenarios with low signal-to-noise ratios, it lacked evaluation in real-time scenarios and embedding within any device. \textcite{Sun2021} built upon the foundational framework established by \textcite{Tran2020}, employing their two-streams deep \gls{cnn} 2D model augmented with a \gls{mlp} that produced a binary outcome indicating the presence or absence of a siren. Simultaneously, a parallel \gls{cnn} 1D model was implemented for both regression and classification purposes, coupled with two additional \gls{mlp} outputs, one determining the direction angle and the other specifying the distance to uniquely establishes the position of the sound source. They achieved latency to produce all three results online in the range of 50\gls{mi}\gls{s}, nevertheless, the model was again not embedded in any device. \textcite{Shabtai2019} explored the use of microphones (internal and external) as sensors in autonomous vehicles, specifically for detecting the direction of emergency vehicle sirens. Using 4 omnidirectional \gls{mems} microphones selected from a array of 32, they implemented a Multiple Signal Classification (MUSIC)-based algorithm with time smoothing techniques to improve the reliability of the estimated \gls{doa} values while for internal microphones, they utilized a transfer function projection for rough estimation of \gls{doa}. Their findings confirmed the possibility of determining the direction of an approaching emergency vehicle in both experiments, however, using internal microphones array proved to be less effective compared to the external array. Although none of the aforementioned papers conducted experiments on embedded devices, WAYMO, a former subsidiary of Alphabet Inc. (Google's parent company), has been focused on developing autonomous vehicle technology, encompassing both hardware and software. It appears to be a few steps ahead, as more recently they published a web article showing their prototype learning to recognize emergency vehicles in Arizona, using sound and light, fully embedded in the vehicle \gls{ee} architecture \cite{WAYMO2023}. 
+
+A broader scope of \gls{esr} for autonomous vehicles was explored by \textcite{Veeraraghavan2020} by proposing a system that involved the utilization of a microphone to capture ambient sound, and processes it by a \gls{cnn} 2D implemented on the Xilinx Zynq \gls{fpga} \gls{soc}. Additionally, the integration of a fuzzy logic Proportional-Integral (PI) controller enabled the reception of commands from the \gls{fpga}, as well as signals from manually-operated systems such as steering, braking, and acceleration. The resulting output commands generated by the controller were then transmitted to the \gls{ecu} via the \gls{can} bus interface. It is noteworthy to mention that this framework was purely theoretical, implemented on Simulink, and lacked empirical evidence regarding the accuracy of the \gls{cnn} model. Nevertheless, the study highlighted the potential for utilizing an acoustic-based architecture in the development of a level 3 semi-autonomous vehicle. Likewise, \textcite{Yin2023} published a conference paper with the ongoing results of the second stage of the I-SPOT project \cite{ISPOT2020} where a road acoustics simulator was designed, sound event detection and localization algorithms were developed, and a sensor array for vehicles was designed. A hybrid approach combining traditional signal processing and deep learning techniques was used for audio signal processing to ensure better interpretability of results in safety-critical situations like autonomous driving. 
+
+
+\section{DISCUSSION}
+\label{sec:relt_wrk_discussion}
+
+In general, despite the limited literature specifically addressing sound recognition in embedded systems for autonomous vehicles, significant contributions have been made to advance this field. Prominent research efforts have been directed towards the detection of emergency vehicle sounds and their precise localization, which is crucial in the context of the C-Bot. However, it is necessary to incorporate other sounds associated with road users which will limit the applicability of certain technologies such as filtering techniques. The utilization of neural networks, particularly those with a lightweight architecture and fast response time, continues to show promise in this domain. Additionally, it is worth noting that while many authors argued that internal microphone arrays are ineffective for detecting external sounds, there is evidence contradicting this claim, specifically in the case of sound source localization. This presents an opportunity to further explore the use of existing internal microphones in vehicles for various applications, including environmental sound recognition.
+
+
+%For the introduction:
+    %\item Home monitoring residential assistance
+    %\item Emergency detection
+    %\item Acoustic event recognition
+
+%For a quick citation:
+%\begin{itemize}
+    %\item Feature extraction
+    %\begin{itemize}
+    %    \item Review on techniques for feature extraction for speech and environmental sound recognition %\cite{Alias2016}
+    %\end{itemize}
+
+    %\item Data augmentation
+    %\begin{itemize}
+        %\item Augmentation + CNN + Log MEL spectrogram + US8K  \cite{Salamon2017}
+        %\item Systematic review in sound classification \cite{Alli2022}
+        % \item Augmentation with MEL filters + CNN + ESC-50 \cite{Chu2023}
+        % \item Reference from speech recognition for augmentation \cite{Park20192613}
+        % \item Augmentation + Deep CNN + MEL + MFCC + Log MEL + ESC-10, ESC-50, and US8K \cite{Mushtaq2020}
+    %\end{itemize}
+
+    %\item Machine learning
+    %\begin{itemize}
+        %\item Machine learning + dataset creation for soundcape semantics \cite{Bountourakis2015}
+        %\item Machine learning + SBP and LSTM-CNN \cite{Pandya2021}
+    %\end{itemize}
+
+    %\item Ensemble learning
+    %\begin{itemize}
+    %    \item Hybrid ensemble learning + classical machine learning + MFCC + US8K \cite{Bansal2022}
+    %\end{itemize}
+
+    %\item Feature aggregation
+    %\begin{itemize}
+        %\item Combinations of features as images + CNN + MFCC, Log-mel Spectrogram, Chroma, Spectral Contrast and Tonnetz + US8K and ESC \cite{Su2020}
+        %\item Handcrafted features + CNN + MFCC, Log-mel Spectrogram, Chroma, Spectral Contrast and Tonnetz %+ US8K and ESC \cite{Luz2021}
+    %\end{itemize}
+
+    %\item CNN
+    %\begin{itemize}
+    %    \item CNN + MFCC + ESC-50 \cite{Shreyas2020} 
+    %\end{itemize}
+
+    %\item Deep learning
+    %\begin{itemize}
+       % \item Thesis + separation between music and environmental sound + Deep CNN and SVM %\cite{Rothmund2018}
+        %\item Emergency vehicles recognition + deep CNN + Raw data + MFCC and Log MEL + US8K and ESC-50 %\cite{Tran2020}
+    %\end{itemize}
+
+    %\item Self supervised learning
+    %\begin{itemize}
+     %   \item Self supervised and transfer learning for different sound event detection + ESC-10 and DCASE %2019 \cite{Tripathi2021}
+    %\end{itemize}
+
+    %\item Embedded system
+    %\begin{itemize}
+        %\item Thesis + KNN, SVM and GMM + MFCC, spectral centroid and spectral entropy + Smartphone $\cite{Abreha2014}
+        %\item Thesis + microcontroler + MEL and deltas + CNN + US8K \cite{Nordby2019}
+        %\item Microcontoller + spectrogram + CNN + US8k \cite{VidaaVila2020}
+
+        %\item Classifical machine learning evaluation + Raspberry Pi + BDLib2, US8k and ESC-10 and ESC-50 + MFCC \cite{Silva2019}
+        %\item CNN 1D + Classifical machine learning + Several spectral features + Raspberry Pi %\cite{Lhoest2021}
+        %\item CNN 1D + High-end purpose platform + Mel Frequency Cepstral Coefficients, Chroma related features, Mel Spectrogram, Spectral Contrast and Tonnetz \cite{Vandendriessche2021}
+        %\item 
+    %\end{itemize}
+%\end{itemize}
+
+%Most relevant:
+%\begin{itemize}
+    %\item Anomaly detection (embedded system + CNN for anomaly detection in smart cities %\cite{Lamrini2023}
+
+    %\item Regular passenger car
+    %\begin{itemize}
+    %    \item Horns and sirens + spectrograms + CNN + sound source localization + tailored dataset %+ external microphones \cite{Marchegiani2022}
+    %\end{itemize} 
+
+    %\item Sensor
+    %\begin{itemize}
+    %    \item external sensor (microphone) for siren detection \cite{BOSCH2024}
+    %\end{itemize} 
+
+
+%    \item Autonomous vehicle
+%    \begin{itemize}
+       % \item Sire detection + external microphone + autonomous vehicle (not embedded) %\cite{Sun2021}
+%        \item EU project for real time \gls{esr} for automotive applications \cite{Yin2023} 
+        %and \cite{ISPOT2020}
+        %\item Detecting emergency vehicle sirens with external microphones \cite{Shabtai2019}
+        %\item \gls{fpga} based \gls{soc} platform + Fuzzy logic + CNN + \gls{ecu} %\cite{Veeraraghavan2020}
+%   \end{itemize}  
+%\end{itemize}
+
+

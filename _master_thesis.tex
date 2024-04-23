@@ -1,0 +1,103 @@
+
+\documentclass[acronym,symbols]{fei}
+
+%\pagestyle{headings}
+
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{array}
+\usepackage{colortbl}
+\usepackage{makecell}
+\usepackage{longtable}
+
+
+%\usepackage{afterpage}
+%\usepackage{amsfonts}
+%\usepackage{comment}
+%\usepackage{csquotes}
+%\usepackage{easytable}
+%\usepackage{here}
+%\usepackage{indentfirst}
+%\usepackage{lipsum}
+%\usepackage{listings}
+%\usepackage{longtable}
+%\usepackage{multicol}
+%\usepackage{multirow}
+%\usepackage{microtype}
+%\usepackage{pdflscape}
+%\usepackage{pgfgantt}
+%\usepackage{setspace}
+%\usepackage{stmaryrd}
+%\usepackage{tabularx}
+%\usepackage{tikz}
+%\usepackage{url}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% -- Configuracoes Iniciais
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\author{André Luiz Florentino}
+%\cidade{Cidade}
+%\instituicao{Instituição de Ensino}
+\title{ENVIRONMENTAL SOUND RECOGNITION IN EMBEDDED SYSTEMS FOR AUTONOMOUS VEHICLES}
+
+% comando para inserção de subfloats do tipo figure, usado aqui no template
+% remova este comando se for usar o pacote subfig
+% não recomendo o pacote subcaption
+
+%\newsubfloat{figure}
+
+%\subtitulo{subtítulo}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% -- Entradas Listas de Abreviaturas e Simbolos
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\input{000-configs}
+
+% Syncronized references with Zotero
+\addbibresource{resources/bibliography/zotero.bib}
+
+% Manually reworked reference file from Zotero to match ABNT latest requirements
+% \addbibresource{resources/bibliography/zotero_manual.bib}
+
+
+\makeindex
+
+\makeglossaries
+
+\begin{document}
+
+\maketitle
+
+\selectlanguage{english}
+
+\input{010-pre-resume.tex}
+\input{011-abstract}
+
+\listoffigures
+\listoftables
+%\listofalgorithms
+\printglossaries
+\tableofcontents
+
+\setcounter{table}{0}
+
+\input{020-introduction}
+\input{030-theoretical_framework}
+\input{040-related_work}
+\input{050-methods}
+\input{060-results.tex}
+\input{070-conclusion}
+
+\printbibliography
+
+\appendix
+\input{080-systematic-review}
+
+%\printindex
+
+\end{document}
